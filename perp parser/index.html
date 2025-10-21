@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Credit Card Statement Parser</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header" id="siteHeader">
+    <nav class="site-nav" aria-label="Primary">
+      <a class="brand" href="/" aria-current="page">
+        <span class="logo-dot"></span> StatementParser
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/" class="nav-link is-active">Home</a></li>
+        <li><a href="/features.html" class="nav-link">Features</a></li>
+        <li><a href="/upload.html" class="nav-link">Upload</a></li>
+        <li><a href="#docs" class="nav-link">Docs</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Interactive Hero -->
+    <section class="hero">
+      <div class="container">
+        <h1 class="hero-title">
+          <span class="typewriter" data-text='Extract Credit Card Data Fast'></span>
+        </h1>
+        <p class="hero-sub">
+          Upload your statement, auto-detect the issuer, and get clean JSON/CSV in seconds.
+        </p>
+        <div class="cta-row">
+          <a href="/features.html" class="btn btn-primary">Get Started</a>
+          <a href="/upload.html" class="btn btn-ghost">Upload Now</a>
+        </div>
+      </div>
+
+      <!-- Decorative gradient orbs -->
+      <div class="orb orb-a"></div>
+      <div class="orb orb-b"></div>
+    </section>
+
+    <!-- Preview of SRS content -->
+    <section class="section" id="supported">
+      <div class="container">
+        <h2 class="section-title">Supported Banks</h2>
+        <div class="cards">
+          <article class="card">HDFC Bank</article>
+          <article class="card">ICICI Bank</article>
+          <article class="card">SBI Card</article>
+          <article class="card">Axis Bank</article>
+          <article class="card">American Express</article>
+        </div>
+
+        <h2 class="section-title mt-lg">Extracted Data Points</h2>
+        <div class="chips">
+          <span class="chip">Cardholder Name</span>
+          <span class="chip">Card Last 4 Digits</span>
+          <span class="chip">Billing Cycle Dates</span>
+          <span class="chip">Total Due Amount</span>
+          <span class="chip">Payment Due Date</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features teaser -->
+    <section class="section alt" id="features">
+      <div class="container grid-2">
+        <div>
+          <h2 class="section-title">Why this tool?</h2>
+          <p>Semantic parsing with issuer auto-detection, regex patterns, and optional OCR fallback for scanned PDFs.</p>
+          <div class="bullets">
+            <div class="bullet">
+              <div class="icon">⚡</div>
+              <div>Fast parsing for PDFs up to 5 MB</div>
+            </div>
+            <div class="bullet">
+              <div class="icon">🔒</div>
+              <div>No permanent file storage</div>
+            </div>
+            <div class="bullet">
+              <div class="icon">🧩</div>
+              <div>Export JSON or CSV easily</div>
+            </div>
+          </div>
+          <div class="cta-row">
+            <a href="/features.html" class="btn btn-primary">See Features</a>
+          </div>
+        </div>
+        <div class="panel">
+          <pre class="code">
+{
+  "Cardholder": "Rahul Sharma",
+  "Card Last 4 Digits": "1234",
+  "Billing Cycle": "01 Sep 2025 - 30 Sep 2025",
+  "Total Due": "₹15,230.45",
+  "Payment Due Date": "20 Oct 2025"
+}
+          </pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="docs">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand-footer"><span class="logo-dot"></span> StatementParser</div>
+        <p class="muted">Lightweight web UI + Python Flask backend for PDF parsing.</p>
+      </div>
+      <nav aria-label="Footer">
+        <ul class="footer-links">
+          <li><a href="/features.html">Features</a></li>
+          <li><a href="/upload.html">Upload</a></li>
+          <li><a href="#">Docs</a></li>
+        </ul>
+      </nav>
+      <div class="copy muted">© 2025 StatementParser</div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
