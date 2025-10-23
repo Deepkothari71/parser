@@ -9,13 +9,15 @@ app = Flask(__name__)
 CORS(app)
 
 # Configuration
-import tempfile
-UPLOAD_FOLDER = tempfile.gettempdir()  # Use system temp directory for Vercel
+UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = {'pdf'}
 MAX_FILE_SIZE = 5 * 1024 * 1024  # 5MB
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = MAX_FILE_SIZE
+
+# Create upload folder if it doesn't exist
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -45,11 +47,10 @@ def parse_statement():
         if not allowed_file(file.filename):
             return jsonify({'error': 'Only PDF files are allowed'}), 400
         
-        # Save file temporarily using tempfile
+        # Save file temporarily
         filename = secure_filename(file.filename)
-        with tempfile.NamedTemporaryFile(delete=False, suffix='.pdf') as tmp_file:
-            file.save(tmp_file.name)
-            filepath = tmp_file.name
+        filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        file.save(filepath)
         
         try:
             # Parse the PDF
@@ -106,10 +107,6 @@ def download_data(format):
 @app.errorhandler(413)
 def file_too_large(e):
     return jsonify({'error': 'File size exceeds 5MB limit'}), 413
-
-# Vercel serverless function handler
-def handler(request):
-    return app(request.environ, lambda *args: None)
 
 if __name__ == '__main__':
     print("🚀 Credit Card Statement Parser Server")
