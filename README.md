@@ -1,8 +1,8 @@
-# 💳 Credit Card Statement Parser
+# 🏦 Credit Card Statement Parser
 
 A powerful web application that extracts and parses data from credit card PDF statements. Built with Flask and designed for maximum security with local processing.
 
-## 🌐 Website Usage (Security-First Approach)
+## 🚀 Website Usage (Security-First Approach)
 
 ### Step-by-Step Usage Guide
 
@@ -36,7 +36,7 @@ A powerful web application that extracts and parses data from credit card PDF st
    - Click "Parse Statement"
    - The parsing happens on your local machine for maximum security
 
-### 🧪 Testing with Sample PDFs
+### 📋 Testing with Sample PDFs
 
 For best results and testing, use the provided sample PDFs:
 
@@ -52,22 +52,22 @@ python test_parser.py sample/ae2.pdf
 ```
 
 **Why use sample PDFs?**
-- ✅ **Guaranteed compatibility** - These PDFs are tested and work perfectly
-- ✅ **Learning tool** - See exactly what data gets extracted
-- ✅ **No privacy concerns** - Sample data for testing purposes
+- 🎯 **Guaranteed compatibility** - These PDFs are tested and work perfectly
+- 📚 **Learning tool** - See exactly what data gets extracted
+- 🔐 **No privacy concerns** - Sample data for testing purposes
 
-### 🔒 Security Benefits of This Approach
+### 🛡️ Security Benefits of This Approach
 
 - **Local Processing**: All PDF parsing happens on your machine
 - **No Cloud Storage**: Files never leave your computer
 - **Privacy Protection**: Your financial data stays private
 - **Full Control**: You control the entire parsing process
 
-## ✨ Features
+## 🎯 Features
 
-### 🏦 Multi-Bank Support
+### 🏛️ Multi-Bank Support
 
-### 🔒 Security-First Design
+### 🔐 Security-First Design
 - **Local Processing** - All PDF parsing happens on your local machine
 - **No Cloud Storage** - Files are never stored on external servers
 - **Temporary Processing** - Files are automatically deleted after parsing
@@ -81,7 +81,7 @@ python test_parser.py sample/ae2.pdf
 - **Drag & Drop** - Easy file upload with drag-and-drop support
 - **Error Handling** - Comprehensive error messages and validation
 
-### 📊 Extracted Data
+### 📈 Extracted Data
 - Cardholder Name
 - Card Number (masked)
 - Statement Period
@@ -89,7 +89,7 @@ python test_parser.py sample/ae2.pdf
 - Minimum Amount Due
 - Due Date
 
-### Installation
+### 📦 Installation
 
 1. **Clone the repository**
    ```bash
@@ -112,7 +112,7 @@ python test_parser.py sample/ae2.pdf
    http://localhost:5000
    ```
 
-## 🔧 Development Setup
+## ⚙️ Development Setup
 
 ### Local Development
 ```bash
@@ -126,7 +126,7 @@ python app.py
 ```
 
 
-## 📁 Project Structure
+## 📂 Project Structure
 
 ```
 parser/
@@ -146,10 +146,10 @@ parser/
 └── test_parser.py        # Testing script
 ```
 
-## 🛠️ Configuration
+## ⚙️ Configuration
 
 
-## 📋 API Endpoints
+## 🔌 API Endpoints
 
 ### POST `/api/parse`
 Upload and parse a PDF statement
@@ -173,7 +173,7 @@ Download parsed data
 - **Output**: File download
 
 
-## 🐛 Troubleshooting
+## 🔧 Troubleshooting
 
 ### Common Issues
 
@@ -198,7 +198,7 @@ python app.py
 ```
 
 
-## 🎯 Roadmap
+## 🗺️ Roadmap
 
 - [ ] OCR support for scanned PDFs
 - [ ] Additional bank support
