@@ -22,7 +22,7 @@ app.config['MAX_CONTENT_LENGTH'] = MAX_FILE_SIZE
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-@app.route('/api/parse', methods=['POST'])
+@app.route('/', methods=['POST'])
 def parse_statement():
     try:
         # Check if file is present
@@ -74,7 +74,7 @@ def parse_statement():
     except Exception as e:
         return jsonify({'error': f'Server error: {str(e)}'}), 500
 
-@app.route('/api/download/<format>', methods=['POST'])
+@app.route('/download/<format>', methods=['POST'])
 def download_data(format):
     try:
         data = request.json

@@ -9,7 +9,11 @@
   "routes": [
     {
       "src": "/api/parse",
-      "dest": "/api/parse"
+      "dest": "/api/parse.py"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/$1"
     }
   ]
 }
