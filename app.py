@@ -9,15 +9,13 @@ app = Flask(__name__)
 CORS(app)
 
 # Configuration
-UPLOAD_FOLDER = 'uploads'
+import tempfile
+UPLOAD_FOLDER = tempfile.gettempdir()  # Use system temp directory for Vercel
 ALLOWED_EXTENSIONS = {'pdf'}
 MAX_FILE_SIZE = 5 * 1024 * 1024  # 5MB
 
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['MAX_CONTENT_LENGTH'] = MAX_FILE_SIZE
-
-# Create upload folder if it doesn't exist
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -47,10 +45,11 @@ def parse_statement():
         if not allowed_file(file.filename):
             return jsonify({'error': 'Only PDF files are allowed'}), 400
         
-        # Save file temporarily
+        # Save file temporarily using tempfile
         filename = secure_filename(file.filename)
-        filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-        file.save(filepath)
+        with tempfile.NamedTemporaryFile(delete=False, suffix='.pdf') as tmp_file:
+            file.save(tmp_file.name)
+            filepath = tmp_file.name
         
         try:
             # Parse the PDF
