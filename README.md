@@ -1,23 +1,10 @@
 # 💳 Credit Card Statement Parser
 
-A powerful web application that extracts and parses data from credit card PDF statements with support for major Indian banks. Built with Flask and designed for maximum security with local processing.
+A powerful web application that extracts and parses data from credit card PDF statements. Built with Flask and designed for maximum security with local processing.
 
 ## ✨ Features
 
 ### 🏦 Multi-Bank Support
-- **HDFC Bank** - Complete statement parsing
-- **ICICI Bank** - Full data extraction
-- **SBI (State Bank of India)** - Comprehensive parsing
-- **Axis Bank** - Statement analysis
-- **American Express** - Data extraction
-- **PNB (Punjab National Bank)** - Statement parsing
-- **Kotak Bank** - Full support
-- **Yes Bank** - Complete parsing
-- **IndusInd Bank** - Data extraction
-- **Citibank** - Statement analysis
-- **Standard Chartered** - Full support
-- **HSBC** - Complete parsing
-- **RBL Bank** - Statement analysis
 
 ### 🔒 Security-First Design
 - **Local Processing** - All PDF parsing happens on your local machine
@@ -40,10 +27,6 @@ A powerful web application that extracts and parses data from credit card PDF st
 - Total Amount Due
 - Minimum Amount Due
 - Due Date
-- Credit Limit
-- Available Credit
-- Transaction Details
-- Bank Information
 
 ## 🚀 Quick Start
 
@@ -55,7 +38,7 @@ A powerful web application that extracts and parses data from credit card PDF st
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/parser.git
+   git clone https://github.com/Deepkothari71/parser.git
    cd parser
    ```
 
@@ -92,41 +75,66 @@ python app.py
 # Test with a sample PDF
 python test_parser.py sample/your_statement.pdf
 ```
+## 🌐 Website Usage (Security-First Approach)
 
-## 🌐 Production Deployment
+### Step-by-Step Usage Guide
 
-### Option 1: Local Server + Public Frontend (Recommended for Security)
+1. **Visit the Website**
+   ```
+   https://parser-deepkothari.vercel.app/
+   ```
 
-For maximum security, run the backend locally and deploy only the frontend:
+2. **Clone the Repository Locally**
+   ```bash
+   git clone https://github.com/Deepkothari71/parser.git
+   cd parser
+   ```
 
-1. **Deploy Frontend to Vercel**
-   - Push your code to GitHub
-   - Connect to Vercel
-   - Deploy the frontend files
+3. **Install Dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-2. **Run Backend Locally**
+4. **Run the Local Server (For Security)**
    ```bash
    python app.py
    ```
+   - This starts the Flask server on `http://localhost:5000`
+   - **Important**: Keep this running while using the website
 
-3. **Configure Frontend**
-   - Update `upload.html` to point to your local server
-   - Use your public IP or ngrok for external access
+5. **Upload and Parse PDFs**
+   - Go back to `https://parser-deepkothari.vercel.app/`
+   - Click "Upload" or go to the upload page
+   - Select your PDF statement
+   - Click "Parse Statement"
+   - The parsing happens on your local machine for maximum security
 
-### Option 2: Full Cloud Deployment
+### 🧪 Testing with Sample PDFs
 
-For convenience (less secure):
+For best results and testing, use the provided sample PDFs:
 
-1. **Deploy to Vercel**
-   ```bash
-   git add .
-   git commit -m "Deploy to Vercel"
-   git push
-   ```
+```bash
+# Test with sample PDFs (recommended for first-time users)
+python test_parser.py sample/hdfc.pdf
+python test_parser.py sample/icici1.pdf
+python test_parser.py sample/sbi1.pdf
+python test_parser.py sample/icici2.pdf
+python test_parser.py sample/sbi2.pdf
+python test_parser.py sample/ae1.pdf
+python test_parser.py sample/ae2.pdf
+```
 
-2. **Vercel will automatically deploy**
-   - Visit your Vercel dashboard
-   - Your app will be available at `https://your-app.vercel.app`
+**Why use sample PDFs?**
+- ✅ **Guaranteed compatibility** - These PDFs are tested and work perfectly
+- ✅ **Learning tool** - See exactly what data gets extracted
+- ✅ **No privacy concerns** - Sample data for testing purposes
+
+### 🔒 Security Benefits of This Approach
+
+- **Local Processing**: All PDF parsing happens on your machine
+- **No Cloud Storage**: Files never leave your computer
+- **Privacy Protection**: Your financial data stays private
+- **Full Control**: You control the entire parsing process
 
 ## 📁 Project Structure
 
@@ -150,19 +158,6 @@ parser/
 
 ## 🛠️ Configuration
 
-### Environment Variables
-Create a `.env` file for configuration:
-```env
-FLASK_ENV=development
-MAX_FILE_SIZE=5242880  # 5MB in bytes
-UPLOAD_FOLDER=uploads
-```
-
-### Security Settings
-- Maximum file size: 5MB
-- Allowed file types: PDF only
-- Automatic file cleanup after processing
-- No persistent storage
 
 ## 📋 API Endpoints
 
@@ -223,20 +218,9 @@ done
 ### Debug Mode
 ```bash
 # Run with debug information
-FLASK_DEBUG=1 python app.py
+python app.py
 ```
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Test thoroughly
-5. Submit a pull request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🔐 Security Notice
 
@@ -245,22 +229,14 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Privacy First**: Your financial data never leaves your control
 - **Open Source**: Full source code available for security review
 
-## 📞 Support
-
-For issues and questions:
-- Create an issue on GitHub
-- Check the troubleshooting section
-- Review the test files for examples
 
 ## 🎯 Roadmap
 
 - [ ] OCR support for scanned PDFs
 - [ ] Additional bank support
 - [ ] Batch processing
-- [ ] Advanced analytics
-- [ ] Mobile app
-- [ ] API rate limiting
-- [ ] User authentication
+
+
 
 ---
 
