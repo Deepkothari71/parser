@@ -2,79 +2,6 @@
 
 A powerful web application that extracts and parses data from credit card PDF statements. Built with Flask and designed for maximum security with local processing.
 
-## ✨ Features
-
-### 🏦 Multi-Bank Support
-
-### 🔒 Security-First Design
-- **Local Processing** - All PDF parsing happens on your local machine
-- **No Cloud Storage** - Files are never stored on external servers
-- **Temporary Processing** - Files are automatically deleted after parsing
-- **Privacy Protection** - Your financial data never leaves your control
-
-### ⚡ Key Capabilities
-- **Lightning Fast** - Parse statements in under 5 seconds
-- **Accurate Extraction** - Advanced text parsing algorithms
-- **Multiple Formats** - Export data as JSON or CSV
-- **Modern UI** - Beautiful, responsive web interface
-- **Drag & Drop** - Easy file upload with drag-and-drop support
-- **Error Handling** - Comprehensive error messages and validation
-
-### 📊 Extracted Data
-- Cardholder Name
-- Card Number (masked)
-- Statement Period
-- Total Amount Due
-- Minimum Amount Due
-- Due Date
-
-## 🚀 Quick Start
-
-### Prerequisites
-- Python 3.8 or higher
-- pip (Python package installer)
-
-### Installation
-
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/Deepkothari71/parser.git
-   cd parser
-   ```
-
-2. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. **Run the application locally**
-   ```bash
-   python app.py
-   ```
-
-4. **Open your browser**
-   ```
-   http://localhost:5000
-   ```
-
-## 🔧 Development Setup
-
-### Local Development
-```bash
-# Install dependencies
-pip install -r requirements.txt
-
-# Run the Flask development server
-python app.py
-
-# The app will be available at http://localhost:5000
-```
-
-### Testing the Parser
-```bash
-# Test with a sample PDF
-python test_parser.py sample/your_statement.pdf
-```
 ## 🌐 Website Usage (Security-First Approach)
 
 ### Step-by-Step Usage Guide
@@ -136,6 +63,69 @@ python test_parser.py sample/ae2.pdf
 - **Privacy Protection**: Your financial data stays private
 - **Full Control**: You control the entire parsing process
 
+## ✨ Features
+
+### 🏦 Multi-Bank Support
+
+### 🔒 Security-First Design
+- **Local Processing** - All PDF parsing happens on your local machine
+- **No Cloud Storage** - Files are never stored on external servers
+- **Temporary Processing** - Files are automatically deleted after parsing
+- **Privacy Protection** - Your financial data never leaves your control
+
+### ⚡ Key Capabilities
+- **Lightning Fast** - Parse statements in under 5 seconds
+- **Accurate Extraction** - Advanced text parsing algorithms
+- **Multiple Format Output** - Export data as JSON or CSV
+- **Modern UI** - Beautiful, responsive web interface
+- **Drag & Drop** - Easy file upload with drag-and-drop support
+- **Error Handling** - Comprehensive error messages and validation
+
+### 📊 Extracted Data
+- Cardholder Name
+- Card Number (masked)
+- Statement Period
+- Total Amount Due
+- Minimum Amount Due
+- Due Date
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Deepkothari71/parser.git
+   cd parser
+   ```
+
+2. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Run the application locally**
+   ```bash
+   python app.py
+   ```
+
+4. **Open your browser**
+   ```
+   http://localhost:5000
+   ```
+
+## 🔧 Development Setup
+
+### Local Development
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the Flask development server
+python app.py
+
+# The app will be available at http://localhost:5000
+```
+
+
 ## 📁 Project Structure
 
 ```
@@ -182,20 +172,6 @@ Download parsed data
 - **Input**: JSON data
 - **Output**: File download
 
-## 🔍 Testing
-
-### Test Individual PDFs
-```bash
-python test_parser.py path/to/statement.pdf
-```
-
-### Test All Sample Files
-```bash
-# Test all sample PDFs
-for file in sample/*.pdf; do
-    python test_parser.py "$file"
-done
-```
 
 ## 🐛 Troubleshooting
 
@@ -220,14 +196,6 @@ done
 # Run with debug information
 python app.py
 ```
-
-
-## 🔐 Security Notice
-
-- **Local Processing**: All PDF parsing happens on your local machine
-- **No Data Storage**: Files are automatically deleted after processing
-- **Privacy First**: Your financial data never leaves your control
-- **Open Source**: Full source code available for security review
 
 
 ## 🎯 Roadmap
